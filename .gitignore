@@ -1,0 +1,4 @@
+__pycache__/
+services/env/*
+!services/env/*.example.env
+.vscode/launch.json
