@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>- Chat -</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        .font {
+            font: 16px/1.6 menlo, monospace;
+        }
+
+        .chat {
+            max-width: 500px;
+            margin: auto;
+            padding: 1em;
+            background: black;
+            color: #fff;
+        }
+
+        .background {
+            background: #240b1ef0;
+        }
+    </style>
+</head>
+<body class="background font">
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+services:
+  flask:
+    image: flask
+    build: services/flask
+    restart: always
+    volumes:
+      - ./services/flask/src:/app/src
+    env_file:
+      - path: ./env/redis.env
+      - path: ./env/flask.env
+    ports:
+      - "5000:5000"
+      - "5678:5678"
+    depends_on:
+      - redis
+    profiles: [dev]
+
+  redis:
+    image: "docker.io/redis:7.4.1"
+    env_file: 
+      - path: ./env/redis.env
+    command: /bin/sh -c "redis-server --requirepass $${REDIS_PASSWORD}"
+    profiles: [dev]
+
+  nginx:
+    image: nginx
+    build: services/nginx
+    ports:
+      - "80:80"
+    profiles: [web]

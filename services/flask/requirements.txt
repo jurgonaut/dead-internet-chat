@@ -1,0 +1,14 @@
+flask
+psycopg2
+gunicorn
+pytest
+requests
+python-logging-loki
+flask-sqlalchemy
+flask-login
+redis
+flask-redis
+gevent
+debugpy
+alembic
+openai
