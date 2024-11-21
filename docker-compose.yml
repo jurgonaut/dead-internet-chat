@@ -28,3 +28,18 @@ services:
     ports:
       - "80:80"
     profiles: [web]
+
+  locust:
+    image: locust
+    build: locust
+    environment:
+      TARGET_HOST: http://nginx/
+      USERNUM: 10
+      USERS: BasicUser
+      SPAWNRATE: 10
+      TIME: 60
+    volumes:
+      - ./services/locust/src:/locust/src
+    ports:
+      - "8089:8089"
+    profiles: [perf]

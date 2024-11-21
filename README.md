@@ -20,6 +20,11 @@ docker-compose --profile dev --profile web up --build
 
 You can create a basic conversation by navigating to the url `localhost:5000/generate_chat`. And you can trigger an Chat GPT response by hitting the url `localhost:5000/bot-response`. Not that you must add your API key to the `env` file.
 
+You can run basic performance stress test with:
+```bash
+docker-compose --profile perf up
+```
+
 TODO
 - currently the users added are never removed, when we add an user we also set a timestamp. We could use that to automatically remove an user after some time
 - there are no tests for the Event Source, it would be nice to find a way to test that
