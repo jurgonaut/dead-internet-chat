@@ -24,4 +24,3 @@ TODO
 - currently the users added are never removed, when we add an user we also set a timestamp. We could use that to automatically remove an user after some time
 - there are no tests for the Event Source, it would be nice to find a way to test that
 - The bot has a very limited personality, we could add multiple traits to make it more interesting
-- we should also limit the number of messages that are being stored

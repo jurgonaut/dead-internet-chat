@@ -53,6 +53,7 @@ class RedisDB():
         now = datetime.datetime.now().replace(microsecond=0).isoformat()
         message = Message(user=user, content=content, date=now)
         self.redis.rpush("messages", pickle.dumps(message))
+        self.redis.ltrim("messages", 0, 99)
         self.redis.publish("chat", pickle.dumps(message))
 
     def pub_listen(self):
