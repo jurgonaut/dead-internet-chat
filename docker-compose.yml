@@ -1,7 +1,12 @@
 services:
   flask:
     image: flask
-    build: services/flask
+    build: 
+      context: services/flask
+      args:
+        UID: ${MY_UID}
+        GID: ${MY_GID}
+    command: tail -f /dev/null
     restart: always
     volumes:
       - ./services/flask/src:/app/src
