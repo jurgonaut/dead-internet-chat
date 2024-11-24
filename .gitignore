@@ -1,4 +1,9 @@
 __pycache__/
+.vscode-server/
+**/.bash_history
+.cache/
+.dotnet/
+.vscode/
 .pytest_cache/
 env/*
 !env/*.example.env
